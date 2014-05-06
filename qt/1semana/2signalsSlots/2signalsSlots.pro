@@ -2,4 +2,4 @@ TEMPLATE=app
 DEPENDPATH+=.
 INCLUDEPATH+=.
 #Input
-SOURCES+=1HelloQt.cpp
+SOURCES+=2signalsSlots.cpp
