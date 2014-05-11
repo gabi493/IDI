@@ -1,0 +1,5 @@
+TEMPLATE = app
+DEPENDPATH+=.
+INCLUDEPATH+=.
+#Input
+SOURCES+=3rellotge.cpp
