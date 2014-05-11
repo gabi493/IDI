@@ -17,30 +17,30 @@ int main( int argc, char ** argv) {
 
 	QHBoxLayout *cH0 = new QHBoxLayout();		//cH0
 
-	QVBoxLayout *cV1 = new QVBoxLayout();			//Hours:
-	QLabel *hours = new QLabel ("Hours", w); 			//hName
-	QLCDNumber *hLCD = new QLCDNumber();				//hLCD
-	QWidget *hDial = new QWidget(0, 23, 1, 1, QWidget);	//hDial
+	QVBoxLayout *cV1 = new QVBoxLayout();				//Hours:
+	QLabel *hours = new QLabel ("Hours"); 							//hName
+	QLCDNumber *hLCD = new QLCDNumber();							//hLCD
+	QWidget *hDial = new QWidget(0, 23, 1, 1, *QWidget hDial, hDial);			//hDial
 
-	QVBoxLayout *cV2 = new QVBoxLayout();			//Minutes:
-	QLabel *minutes = new QLabel ("Minutes", w); 			//mName
-	QLCDNumber *mLCD = new QLCDNumber();				//mLCD
-	QWidget *mDial = new QWidget(0, 59, 1, 1, QWidget, mDial);	//mDial
+	QVBoxLayout *cV2 = new QVBoxLayout();				//Minutes:
+	QLabel *minutes = new QLabel ("Minutes"); 						//mName
+	QLCDNumber *mLCD = new QLCDNumber();							//mLCD
+	QWidget *mDial = new QWidget(0, 59, 1, 1, *QWidget mDial, mDial);			//mDial
 
 	QSpacerItem *sp1 = new QSpacerItem(20, 100);			//sp1
 
-	//QSpacerItem *sp2 = new QSpacerItem(100, 40);		//sp2
 
 	QHBoxLayout *cHexit = new QHBoxLayout();	//exit
-	QPushButton *exit = new QPushButton("&Exit", w);	//eButton
+	QPushButton *exit = new QPushButton("&Exit", w);		//eButton
+
 
 		//Insertem el hName, hLCD i hDial al cV1
-	cV1->addItem(hours);
+	cV1->addWidget(hours);
 	cV1->addWidget(hLCD);
 	cV1->addWidget(hDial);
 
 		//Insertem el mName, mLCD i mDial al cV2
-	cV2->addItem(minutes);
+	cV2->addWidget(minutes);
 	cV2->addWidget(mLCD);
 	cV2->addWidget(mDial);
 
@@ -59,7 +59,7 @@ int main( int argc, char ** argv) {
 
 
 		// Afegim els signals i slots
-	app.connect(quitButton, SIGNAL(clicked()), w, SLOT(close()));
+	app.connect(exit, SIGNAL(clicked()), w, SLOT(close()));
 	app.connect(hDial, SIGNAL(dialMoved(int num)), hLCD, SLOT(display(int num)));
 	app.connect(mDial, SIGNAL(dialMoved(int num)), mLCD, SLOT(display(int num)));
 
