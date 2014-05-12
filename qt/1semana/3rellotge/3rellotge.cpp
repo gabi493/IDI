@@ -2,7 +2,6 @@
 #include <QFrame>
 #include <QLabel>
 #include <QWidget>
-#include <QDial>
 #include <QLCDNumber>
 #include <QDial>
 #include <QLayout>
@@ -20,18 +19,14 @@ int main( int argc, char ** argv) {
 	QHBoxLayout *cH0 = new QHBoxLayout();		//cH0
 
 	QVBoxLayout *cV1 = new QVBoxLayout();				//Hours:
-	QLabel *hours = new QLabel ("Hours"); 							//hName
+	QLabel *hours = new QLabel ("Hours");							//hName
 	QLCDNumber *hLCD = new QLCDNumber();							//hLCD
 	QDial *hDial = new QDial(NULL);								//hDial
 
 	QVBoxLayout *cV2 = new QVBoxLayout();				//Minutes:
 	QLabel *minutes = new QLabel ("Minutes"); 						//mName
 	QLCDNumber *mLCD = new QLCDNumber();							//mLCD
-<<<<<<< HEAD
-	QWidget *mDial = new QWidget(NULL);							//mDial
-=======
 	QDial *mDial = new QDial(NULL);								//mDial
->>>>>>> e740fa39fdd074baea8b49e37e712c687509193f
 
 	QSpacerItem *sp1 = new QSpacerItem(20, 100);			//sp1
 
@@ -66,8 +61,8 @@ int main( int argc, char ** argv) {
 
 		// Afegim els signals i slots
 	app.connect(exit, SIGNAL(clicked()), w, SLOT(close()));
-	app.connect(hDial, SIGNAL(sliderMoved(int num)), hLCD, SLOT(display(int num)));
-	app.connect(mDial, SIGNAL(sliderMoved(int num)), mLCD, SLOT(display(int num)));
+	app.connect(hDial, SIGNAL(dialMoved(int num)), hLCD, SLOT(display(int num)));
+	app.connect(mDial, SIGNAL(dialMoved(int num)), mLCD, SLOT(display(int num)));
 
 	w->show();
 	return app.exec();
