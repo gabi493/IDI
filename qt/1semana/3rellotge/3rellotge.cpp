@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDial>
 #include <QLCDNumber>
+#include <QDial>
 #include <QLayout>
 #include <QPushButton>
 #include <QVBoxLayout>
@@ -26,7 +27,11 @@ int main( int argc, char ** argv) {
 	QVBoxLayout *cV2 = new QVBoxLayout();				//Minutes:
 	QLabel *minutes = new QLabel ("Minutes"); 						//mName
 	QLCDNumber *mLCD = new QLCDNumber();							//mLCD
+<<<<<<< HEAD
 	QWidget *mDial = new QWidget(NULL);							//mDial
+=======
+	QDial *mDial = new QDial(NULL);								//mDial
+>>>>>>> e740fa39fdd074baea8b49e37e712c687509193f
 
 	QSpacerItem *sp1 = new QSpacerItem(20, 100);			//sp1
 
