@@ -22,11 +22,13 @@ int main( int argc, char ** argv) {
 	QLabel *hours = new QLabel ("Hours");							//hName
 	QLCDNumber *hLCD = new QLCDNumber();							//hLCD
 	QDial *hDial = new QDial(NULL);								//hDial
+	hDial->setRange(0, 23);
 
 	QVBoxLayout *cV2 = new QVBoxLayout();				//Minutes:
 	QLabel *minutes = new QLabel ("Minutes"); 						//mName
 	QLCDNumber *mLCD = new QLCDNumber();							//mLCD
 	QDial *mDial = new QDial(NULL);								//mDial
+	mDial->setRange(0, 59);
 
 	QSpacerItem *sp1 = new QSpacerItem(20, 100);			//sp1
 
@@ -61,8 +63,8 @@ int main( int argc, char ** argv) {
 
 		// Afegim els signals i slots
 	app.connect(exit, SIGNAL(clicked()), w, SLOT(close()));
-	app.connect(hDial, SIGNAL(dialMoved(int num)), hLCD, SLOT(display(int num)));
-	app.connect(mDial, SIGNAL(dialMoved(int num)), mLCD, SLOT(display(int num)));
+	app.connect(hDial, SIGNAL(valueChanged(int value)), hLCD, SLOT(display(int value)));
+	app.connect(mDial, SIGNAL(sliderMoved(int value)), mLCD, SLOT(display(int value)));
 
 	w->show();
 	return app.exec();
