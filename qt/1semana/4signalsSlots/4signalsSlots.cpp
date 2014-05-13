@@ -3,6 +3,7 @@
 #include <QFrame>	//Per a poder utilitzar el contenidor QFrame
 #include <QLayout>	//Per a poder utilitzar el 'Layout'
 #include <QLineEdit>	//Per a poder utilitzar QLineEdit
+#include "MiClase.h"	//Para poder usar mis signals/slots 
 
 int main(int argc, char **argv) {
 	QApplication a(argc, argv);
@@ -27,6 +28,12 @@ int main(int argc, char **argv) {
 
 	QPushButton *surt = new QPushButton("Sortir", &F);	//Afegeix un altre boto
 	cV->addWidget(surt);
+
+
+
+	le.letrasMayusMinus();
+
+
 
 	F.show();
 	return a.exec();
