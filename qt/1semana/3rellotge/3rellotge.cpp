@@ -63,8 +63,8 @@ int main( int argc, char ** argv) {
 
 		// Afegim els signals i slots
 	app.connect(exit, SIGNAL(clicked()), w, SLOT(close()));
-	app.connect(hDial, SIGNAL(valueChanged(int value)), hLCD, SLOT(display(int value)));
-	app.connect(mDial, SIGNAL(sliderMoved(int value)), mLCD, SLOT(display(int value)));
+	app.connect(hDial, SIGNAL(valueChanged(int)), hLCD, SLOT(display(int)));
+	app.connect(mDial, SIGNAL(sliderMoved(int)), mLCD, SLOT(display(int)));
 
 	w->show();
 	return app.exec();
