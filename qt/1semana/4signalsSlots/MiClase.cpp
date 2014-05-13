@@ -1,20 +1,20 @@
 #include "MiClase.h"
 
 
-class MiClase : public QObject {
+class MiClase : public QLabel {
 
 	Q_OBJECT		//Macro de Qt
 
-	public:
-		String s;
-		MiClase() {
-		}
-
 	public slots:		//Metodos publicos
+		
+		void letrasMayusMinus() {
+			
+		}
+		
 		char getChar(int n, String st) {
 			return st[n];
 		}
-		void setChar(int, char) {
+		void setChar(int n, char c) {
 			
 		}
 		
