@@ -14,11 +14,11 @@ int main(int argc, char **argv) {
 	QFrame F(0, NULL);	//Crea un frame
 	QHBoxLayout *cH = new QHBoxLayout(&F);			//Crea un contenidornidor horitzontal
 	QLineEdit *le = new QLineEdit("Line Edit", &F);		//Afegeix una caixa de text
-	QLabel *label_mostra = new QLabel ("Muestra", &F);	//Afegeix un label
+	MiClase *label_mostra = new MiClase ("Muestra", &F);	//Afegeix un label
 	
 	QSpacerItem *sp = new QSpacerItem(100, 20);		//Afegeix un espai (horitzontal, vertical)
-	QVBoxLayout *cV = new QVBoxLayout(&F);			//Crea un contrnidor vertical
-	QPushButton *ok = new QPushButton("D'acord", &F);	//Afegeix un boto
+	QVBoxLayout *cV = new QVBoxLayout();			//Crea un contrnidor vertical
+	QPushButton *ok = new QPushButton("&Cambiar", &F);	//Afegeix un boto
 	QPushButton *surt = new QPushButton("&Sortir", &F);	//Afegeix un altre boto
 
 
@@ -33,9 +33,8 @@ int main(int argc, char **argv) {
 	cV->addWidget(surt);
 
 	//Conectem els signals amb els slots
-	a.connect(surt, SIGNAL(clicked()), F, SLOT(close()));
-	a.connect(ok, SIGNAL(clicked()), label_mostra, SLOT(setTexto()));
-	a.connect(le, SIGNAL(textChanged(const QString&)), label_mostra, SLOT(setText(const QString &)));
+	a.connect(surt, SIGNAL(clicked()), &F, SLOT(close()));
+	a.connect(le, SIGNAL(textChanged(const QString&)), label_mostra, SLOT(setTexto(const QString &)));
 
 
 	F.show();
