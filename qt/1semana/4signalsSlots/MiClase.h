@@ -3,7 +3,7 @@
 #include <QChar>
 
 
-class MiClase : public QObject {		// public QObject = extends QObject de JAVA
+class MiClase : public QLabel {		// public QLabel = extends QLabel de JAVA
 
 	Q_OBJECT	//Macro de Qt
 
@@ -16,6 +16,7 @@ class MiClase : public QObject {		// public QObject = extends QObject de JAVA
 				if (i%2 == 0) newTexto = newTexto.replace(i, 1, newTexto[i].toUpper());
 				else newTexto = newTexto.replace(i, 1, newTexto[i].toLower());
 			}
+			texto = newTexto;
 		}
 		
 	
