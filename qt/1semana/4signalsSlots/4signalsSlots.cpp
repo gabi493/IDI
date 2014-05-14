@@ -4,6 +4,8 @@
 #include <QLayout>	//Per a poder utilitzar el 'Layout'
 #include <QLineEdit>	//Per a poder utilitzar QLineEdit
 
+#include "MiClase.h"	//Para poder usar mis signals/slots 
+
 int main(int argc, char **argv) {
 	QApplication a(argc, argv);
 	QString fontFamily = "Arial";
@@ -25,8 +27,13 @@ int main(int argc, char **argv) {
 	QPushButton *ok = new QPushButton("D'acord", &F);	//Afegeix un boto
 	cV->addWidget(ok);
 
-	QPushButton *surt = new QPushButton("Sortir", &F);	//Afegeix un altre boto
+	QPushButton *surt = new QPushButton("&Sortir", &F);	//Afegeix un altre boto
 	cV->addWidget(surt);
+
+
+
+
+
 
 	F.show();
 	return a.exec();
